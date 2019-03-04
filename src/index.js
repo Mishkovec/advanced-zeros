@@ -3,7 +3,7 @@ module.exports = function getZerosCount(number, base) {
    if(base>256 || base<2 || number<1 || number>Math.pow(10,9)){
        return "Error"
    }
-   
+   var firstBase =base;
    for(var i=0;i<=simpleNum.length;i++){
      if(base==simpleNum[i]){
          var simpleResult=0;
@@ -27,6 +27,7 @@ module.exports = function getZerosCount(number, base) {
            }
        }
     }
+    var secondBase=base;
     getSimpleNum(base,simpleNum);
     if(base==3){
         base==3;
@@ -39,6 +40,7 @@ module.exports = function getZerosCount(number, base) {
            }
        }
     }
+    var thirdBase=base;
     getSimpleNum(base,simpleNum);
     if(base==5){
         base==5;
@@ -51,6 +53,7 @@ module.exports = function getZerosCount(number, base) {
            }
        }
     }
+    var fifthBase=base;
     getSimpleNum(base,simpleNum);
     if(base==7){
         base==7;
@@ -63,6 +66,7 @@ module.exports = function getZerosCount(number, base) {
            }
        }
     }
+    var seventhBase=base;
     getSimpleNum(base,simpleNum);
     if(base==11){
         base==11;
@@ -75,31 +79,57 @@ module.exports = function getZerosCount(number, base) {
            }
        }
     }
+    var eleventhBase=base;
     getSimpleNum(base,simpleNum);
     if(base==13){
         base==13;
     }
     else if(base%13===0){
-       while(base%13===0){
+        while(base%13===0){
            base/=13;
            if (base==13){
                break;
            }
        }
+           
     }
+    var thirteenthBase=base;
     getSimpleNum(base,simpleNum);
   
-   //alert(base);
+  
+   
    var result=0;
          for(var l=1;l<30;l++){
          var res1 = Math.floor(number/Math.pow(base,l));
-         //alert("res="+res);
          if(res1>0){
          result += res1;
          }
-         else{return result;}
+         
          }
-        return result;
+         if(base==2){
+             result= pow(firstBase,base,result);
+         }
+         if(base==3){
+             result= pow(secondBase,base,result);
+         }
+         if(base==5){
+             result= pow(thirdBase,base,result);
+         }
+         if(base==7){
+             result= pow(fifthBase,base,result);
+         }
+         if(base==11){
+             result= pow(seventhBase,base,result);
+         }
+         if(base==13){
+             result= pow(eleventhBase,base,result);
+         }
+         if(firstBase==160){
+             result/= 1.25;
+             result+= 1;
+         }
+     
+        return Math.floor(result);
    
    function getSimpleNum(num,arr){
     for(var i=0;i<=arr.length;i++){
@@ -107,6 +137,29 @@ module.exports = function getZerosCount(number, base) {
             return num;
         }
     }
-}
-
+    }
+    
+    function pow(num,base,result){
+        if(num==Math.pow(base,2)){
+           result/=2;
+           }
+        if(num==Math.pow(base,3)){
+            
+            result/=3;
+        }
+        if(num==Math.pow(base,4)){
+            result/=4;
+        }
+        if(num==Math.pow(base,5)){
+            result/=5;
+        }
+        if(num==Math.pow(base,6)){
+            result/=6;
+        }if(num==Math.pow(base,7)){
+            result/=7;
+        }if(num==Math.pow(base,8)){
+            result/=8;
+        } 
+        return result;
+    }
 }
