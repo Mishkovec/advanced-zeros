@@ -128,6 +128,10 @@ module.exports = function getZerosCount(number, base) {
              result/= 1.25;
              result+= 1;
          }
+        if(firstBase==192){
+             result/= 3;
+             
+         }
      
         return Math.floor(result);
    
