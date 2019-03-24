@@ -18,8 +18,10 @@ module.exports = function getZerosCount(number, base) {
         return simpleResult;
      }
    }*/
-   
-    if(base%2===0){
+   if(base==2){
+        base==2;
+    }
+    else if(base%2===0){
        while(base%2===0){
            base/=2;
            if (base==2){
