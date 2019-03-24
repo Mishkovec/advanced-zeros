@@ -3,8 +3,8 @@ module.exports = function getZerosCount(number, base) {
    if(base>256 || base<2 || number<1 || number>Math.pow(10,9)){
        return "Error"
    }
-  /* var firstBase =base;
-   for(var i=0;i<=simpleNum.length;i++){
+   var firstBase =base;
+   /*for(var i=0;i<=simpleNum.length;i++){
      if(base==simpleNum[i]){
          var simpleResult=0;
          for(var k=1;k<30;k++){
