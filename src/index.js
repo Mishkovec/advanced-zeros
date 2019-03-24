@@ -3,7 +3,7 @@ module.exports = function getZerosCount(number, base) {
    if(base>256 || base<2 || number<1 || number>Math.pow(10,9)){
        return "Error"
    }
-   var firstBase =base;
+  /* var firstBase =base;
    for(var i=0;i<=simpleNum.length;i++){
      if(base==simpleNum[i]){
          var simpleResult=0;
@@ -17,7 +17,7 @@ module.exports = function getZerosCount(number, base) {
          }
         return simpleResult;
      }
-   }
+   }*/
    
     if(base%2===0){
        while(base%2===0){
@@ -124,14 +124,14 @@ module.exports = function getZerosCount(number, base) {
          if(base==13){
              result= pow(eleventhBase,base,result);
          }
-         if(firstBase==160){
+        /* if(firstBase==160){
              result/= 1.25;
              result+= 1;
          }
         if(firstBase==192){
              result/= 3;
              
-         }
+         }*/
      
         return Math.floor(result);
    
